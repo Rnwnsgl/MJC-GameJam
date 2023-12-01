@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ladder2
+  - Bullet
+  - Portal1
+  - Portal2
   layers:
   - Default
   - TransparentFX
