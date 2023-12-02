@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7704193321939623685}
   - component: {fileID: 3326040481867969247}
   - component: {fileID: 774977391474339454}
-  - component: {fileID: 5611099550936396523}
   - component: {fileID: 8172107971755342447}
+  - component: {fileID: 8069541657596925035}
   m_Layer: 0
   m_Name: CamTexture
   m_TagString: Portal2
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1880807221223223320}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.023, y: 0.032, z: -0.002}
-  m_LocalScale: {x: 0.18251784, y: 0.66241646, z: 0.88342}
+  m_LocalScale: {x: 0.36256084, y: 0.66241646, z: 0.88342}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4706116037937865665}
@@ -85,20 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5611099550936396523
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1880807221223223320}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &8172107971755342447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,6 +97,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8687cc2bf6e4d490694df71470b6f593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &8069541657596925035
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880807221223223320}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 1.0000002}
+  m_Center: {x: 0, y: -0.00000011920929, z: 0}
 --- !u!1 &2333451135935374642
 GameObject:
   m_ObjectHideFlags: 0

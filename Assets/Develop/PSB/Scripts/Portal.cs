@@ -5,10 +5,12 @@ using UnityEngine;
 public class Portal : MonoBehaviour
 {
     PortalManager pm;
+    PlayerController pc;
     // Start is called before the first frame update
     void Start()
     {
         pm = FindObjectOfType<PortalManager>();
+        pc = FindObjectOfType<PlayerController>();
     }
 
     // Update is called once per frame
@@ -17,32 +19,54 @@ public class Portal : MonoBehaviour
         
     }
 
+    private void FixedUpdate()
+    {
+        
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        print("1");
         if(pm.IsLinkPortal)
         {
-            print("2");
             if (other.CompareTag("Bullet"))
             {
+                //Vector3 contactPoint = other.
+
+                //if (gameObject.CompareTag("Portal1"))
+                //{
+                //    other.transform.position = pm.curPortals[1].GetComponentInChildren<Portal>().transform.position;
+                //}
+                //else if (gameObject.CompareTag("Portal2"))
+                //{
+                //    other.transform.position = pm.curPortals[0].GetComponentInChildren<Portal>().transform.position;
+                //}
+                if (gameObject.CompareTag("Portal1"))
+                {
+                    other.transform.GetComponent<Projectile>().Teleport(pm.curPortals[1].GetComponentInChildren<tpPos>().transform);
+                }
+                else if (gameObject.CompareTag("Portal2"))
+                {
+                    other.transform.GetComponent<Projectile>().Teleport(pm.curPortals[0].GetComponentInChildren<tpPos>().transform);
+                }
 
             }
             else if(other.CompareTag("Player") && pm.CanUsePortal)
             {
-                print("3");
+                pm.UsePortal();
                 if (gameObject.CompareTag("Portal1"))
                 {
-                    print("4");
-                    pm.UsePortal();
+                    print("1");
                     other.transform.position = pm.curPortals[1].GetComponentInChildren<tpPos>().transform.position;
                 }
                 else if (gameObject.CompareTag("Portal2"))
                 {
-                    print("5");
-                    pm.UsePortal();
+                    print("2");
                     other.transform.position = pm.curPortals[0].GetComponentInChildren<tpPos>().transform.position;
+
                 }
             }
         }
     }
 }
+
+
